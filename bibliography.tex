@@ -1,0 +1,104 @@
+\documentclass[a4paper]{article}
+\usepackage{fullpage}
+
+%% Choose one of the following (if not choosing the default, 
+%% viz., Computer Modern, font family):
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{kpfonts}
+%\usepackage{mathptmx}
+%\usepackage{times,mtpro2}
+%\usepackage{stix}
+%\usepackage{txfonts}
+%\usepackage{newtxtext,newtxmath}
+\usepackage{libertine} \usepackage[libertine]{newtxmath}
+
+
+\usepackage[natbib=true,
+            style=numeric,
+            sorting=ydnt,
+            backend=biber,
+            bibencoding=utf8,
+            giveninits=true,
+            url=false, doi=false,
+            defernumbers,
+            maxcitenames=3,
+            maxbibnames=100]{biblatex}
+\addbibresource{rougier.bib}
+
+\usepackage{xcolor}
+\definecolor{blendedblue}{rgb}{0.2, 0.2, 0.6}
+\definecolor{blendedred}{rgb}{0.8, 0.2, 0.2}
+\definecolor{lightgray}{rgb}{0.7, 0.7, 0.7}
+\usepackage[bookmarks=true,
+            breaklinks=true,
+            pdfborder={0 0 0},
+            citecolor=blendedblue,
+            colorlinks=true,       % false: boxed links; true: colored links
+            linkcolor=blendedblue,
+            urlcolor=blendedblue,
+            citecolor=blendedblue,
+            linktocpage=false,
+            hyperindex=true,
+            linkbordercolor=white]{hyperref}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+
+
+% ------------------------------------------------------------------------------------
+% From TeX stack exchange
+% "Is it possible to make a reference clickable without showing its DOI or URL field?"
+% ------------------------------------------------------------------------------------
+\newcommand{\doiorurl}{%
+  \iffieldundef{doi}
+    {\iffieldundef{url}
+       {}
+       {\strfield{url}}}
+    {http://dx.doi.org/\strfield{doi}}%
+}
+\newcommand{\myhref}[1]{%
+ \ifboolexpr{%
+   test {\ifhyperref}
+   and
+   not test {\iftoggle{bbx:url}}
+   and
+   not test {\iftoggle{bbx:doi}}
+  }
+  {\href{\doiorurl}{#1}}
+  {#1}%
+}
+\DeclareFieldFormat{title}{\myhref{\mkbibemph{#1}}}
+\DeclareFieldFormat
+  [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+  {title}{\myhref{\mkbibquote{#1\isdot}}}
+
+
+% ------------------------------------------------------------------------------------  
+
+% ------------------------------------------------------------------------------------
+\begin{document}
+
+\nocite{*}
+
+\defbibfilter{book}{keyword={book}}
+\defbibfilter{preprint}{keyword={preprint}}
+\defbibfilter{journal}{keyword={journal}}
+\defbibfilter{chapter}{type=incollection}
+\defbibfilter{conference}{type=inproceedings}
+\defbibfilter{tutorial}{keyword={tutorial}}
+\defbibfilter{popular}{keyword={popular}}
+\defbibfilter{invited}{keyword={invited}}
+
+\printbibliography[heading=subbibliography, title={Preprints},        filter=preprint]
+\printbibliography[heading=subbibliography, title={Journals},         filter=journal]
+\printbibliography[heading=subbibliography, title={Monographs},       filter=book]
+\printbibliography[heading=subbibliography, title={Book chapters},    filter=chapter]
+\printbibliography[heading=subbibliography, title={Conference},       filter=conference]
+\printbibliography[heading=subbibliography, title={Science outreach}, filter=popular]
+\printbibliography[heading=subbibliography, title={Tutorial},         filter=tutorial]
+\printbibliography[heading=subbibliography, title={Invited talk},     filter=invited]
+
+\end{document}
+
+
+
