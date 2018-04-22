@@ -1,17 +1,19 @@
-\documentclass[a4paper]{article}
-\usepackage{fullpage}
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
 
-%% Choose one of the following (if not choosing the default, 
-%% viz., Computer Modern, font family):
-%\usepackage{lmodern}
-%\usepackage{mathpazo}
-%\usepackage{kpfonts}
-%\usepackage{mathptmx}
-%\usepackage{times,mtpro2}
-%\usepackage{stix}
-%\usepackage{txfonts}
-%\usepackage{newtxtext,newtxmath}
-\usepackage{libertine} \usepackage[libertine]{newtxmath}
+\documentclass[10pt]{article}
+%\usepackage{libertine}
+%\usepackage[libertine]{newtxmath}
+%\usepackage{classico}
+
+\usepackage{fontspec} 
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{Hoefler Text}
+\setmonofont[Scale=0.9]{Source Code Pro} 
+\setsansfont[Scale=1.0]{Optima Regular} 
+\renewcommand{\familydefault}{\sfdefault}
 
 \usepackage[natbib=true,
             style=numeric,
@@ -23,13 +25,7 @@
             defernumbers,
             maxcitenames=3,
             maxbibnames=100]{biblatex}
-
-\addbibresource{rougier.bib}
-
-
-\usepackage{tocloft}
-\usepackage{etoc}       
-\setcounter{secnumdepth}{4}
+\addbibresource{rougier2.bib}
 
 \usepackage{xcolor}
 \definecolor{blendedblue}{rgb}{0.2, 0.2, 0.6}
@@ -46,13 +42,15 @@
             linktocpage=false,
             hyperindex=true,
             linkbordercolor=white]{hyperref}
-\usepackage{hyperref}
-\hypersetup{colorlinks=true}
+
+\usepackage[rmargin=4.5cm,lmargin=2cm,bmargin=2.5cm,
+            marginparwidth=3cm,twoside=false]{geometry}
 
 
-% \usepackage[rmargin=4.5cm,lmargin=2cm,bmargin=2.5cm,
-%             marginparwidth=3cm,twoside=false]{geometry}
-
+\usepackage{titlesec}
+\titleformat{\subsection}
+            {\color{blendedred}\normalfont\large\bfseries}
+            {\color{blendedred}\thesection}{1em}{}
 
 % ------------------------------------------------------------------------------------
 % Sidenotes
@@ -61,6 +59,7 @@
 \DeclareFieldFormat{sidenote}{\marginpar{\footnotesize \textsc{\textcolor{lightgray}{#1}}}}
 
 \DeclareBibliographyCategory{Highlight}
+\addtocategory{Highlight}{shivkumar:article:2017, rougier:article:2005}
 
 \usepackage{tikz} % Tikz basic
 \usetikzlibrary{tikzmark} % Gives \tikzmark for markers
@@ -92,11 +91,16 @@
 }
 \renewbibmacro*{finentry}{\finentry\tikzmark{\thefield{entrykey}end}}
 
+%  \ifcategory{Highlight}%
+%    {\fcolorbox{lightgray}{lightgray}{#1}}%
+%    {\bfseries\color{lightgray}}%
+%    {}%
+%}
+
 % ------------------------------------------------------------------------------------
 % No square brackets
 % ------------------------------------------------------------------------------------
 \DeclareFieldFormat{labelnumberwidth}{#1}
-
 
 % ------------------------------------------------------------------------------------
 % From TeX stack exchange
@@ -126,122 +130,67 @@
   {title}{\myhref{\mkbibquote{#1\isdot}}}
 
 
-% ------------------------------------------------------------------------------------  
 
-% ------------------------------------------------------------------------------------
+
 \begin{document}
 
 \nocite{*}
 
-\section*{Nicolas P. Rougier's bibliography}
-Latest update on \today.
-
-% \addtocategory{Highlight}{shivkumar:article:2017, rougier:article:2005}
-
-\defbibheading{subbibliography}[\refname]{\subsubsection*{#1}}
-
 \defbibfilter{book}{keyword={book}}
 \defbibfilter{preprint}{keyword={preprint}}
 \defbibfilter{journal}{keyword={journal}}
-\defbibfilter{correspondence}{keyword={correspondence}}
 \defbibfilter{chapter}{type=incollection}
 \defbibfilter{conference}{type=inproceedings}
 \defbibfilter{tutorial}{keyword={tutorial}}
 \defbibfilter{popular}{keyword={popular}}
 \defbibfilter{invited}{keyword={invited}}
-\defbibfilter{external}{keyword={external}}
-\defbibfilter{replication}{keyword={replication}}
-\defbibfilter{lecture}{keyword={lecture}}
 
-
-%\noindent \textbf{Categories}
-\etocsetnexttocdepth{6}
-\etocsettocstyle{\subsubsection*{}}{}
-\cftsubsubsecindent 0pt
-\localtableofcontents
-
-\subsubsection*{Preprints}
-
-\addcontentsline{toc}{subsubsection}{Preprints}
 \begin{refcontext}[labelprefix=PP.]
-% \printbibliography[heading=subbibliography, title={Preprints},  filter=preprint]
-\printbibliography[heading=none, filter=preprint]
+  \printbibliography[heading=subbibliography,
+                     title={Preprints},
+                     filter=preprint]
 \end{refcontext}
 
-\subsubsection*{Replications}
-\addcontentsline{toc}{subsubsection}{Replications}
-\begin{refcontext}[labelprefix=RE.]
-\printbibliography[heading=none, filter=replication]
-\end{refcontext}
-
-\subsubsection*{Correspondences}
-\addcontentsline{toc}{subsubsection}{Correspondence}
-\begin{refcontext}[labelprefix=CO.]
-\printbibliography[heading=none, filter=correspondence]
-\end{refcontext}
-
-
-\subsubsection*{Highlights}
-\addcontentsline{toc}{subsubsection}{Highlights}
-\begin{refcontext}[labelprefix=HI.]
-\printbibliography[heading=none, filter=external]
-\end{refcontext}
-
-
-\subsubsection*{Journals}
-\addcontentsline{toc}{subsubsection}{Journals}
 \begin{refcontext}[labelprefix=IJ.]
-\printbibliography[heading=none, filter=journal]
+  \printbibliography[heading=subbibliography,
+                     title={Journals},
+                     filter=journal]
 \end{refcontext}
 
-
-\subsubsection*{Book \& Thesis}
-\addcontentsline{toc}{subsubsection}{Book \& Thesis}
 \begin{refcontext}[labelprefix=BK.]
-\printbibliography[heading=none, filter=book]
+  \printbibliography[heading=subbibliography,
+                     title={Book \& Thesis},
+                     filter=book]
 \end{refcontext}
 
-\subsubsection*{Book Chapters}
-\addcontentsline{toc}{subsubsection}{Book Chapters}
 \begin{refcontext}[labelprefix=CH.]
-\printbibliography[heading=none, filter=chapter]
+  \printbibliography[heading=subbibliography,
+                     title={Book Chapters},
+                     filter=chapter]
 \end{refcontext}
 
-\subsubsection*{Conferences/Short Papers/Posters}
-\addcontentsline{toc}{subsubsection}{Conferences/Short Papers/Posters}
 \begin{refcontext}[labelprefix=CI.]
-\printbibliography[heading=none, filter=conference]
+  \printbibliography[heading=subbibliography,
+                     title={Conferences/Short Papers/Posters},
+                     filter=conference]
 \end{refcontext}
 
-
-\subsubsection*{Science Outreach}
-\addcontentsline{toc}{subsubsection}{Science Outreach}
 \begin{refcontext}[labelprefix=SO.]
-\printbibliography[heading=none, filter=popular]
+  \printbibliography[heading=subbibliography,
+                     title={Science Outreach},
+                     filter=popular]
 \end{refcontext}
 
-
-\subsubsection*{Invited Talks}
-\addcontentsline{toc}{subsubsection}{Invited Talks}
-\begin{refcontext}[labelprefix=IV.]
-\printbibliography[heading=none, filter=invited]
-\end{refcontext}
-
-\subsubsection*{Invited Lectures}
-\addcontentsline{toc}{subsubsection}{Invited Lectures}
-\begin{refcontext}[labelprefix=IL.]
-\printbibliography[heading=none, filter=lecture]
-\end{refcontext}
-
-
-\subsubsection*{Online Tutorials}
-\addcontentsline{toc}{subsubsection}{Online Tutorials}
 \begin{refcontext}[labelprefix=TU.]
-\printbibliography[heading=none, filter=tutorial]
+  \printbibliography[heading=subbibliography,
+                     title={Tutorials},
+                     filter=tutorial]
 \end{refcontext}
 
+\begin{refcontext}[labelprefix=IV.]
+  \printbibliography[heading=subbibliography,
+                     title={Invited Talks \& Lectures},
+                     filter=invited]
+\end{refcontext}
 
 \end{document}
-
-
-
