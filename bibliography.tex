@@ -13,6 +13,19 @@
 %\usepackage{newtxtext,newtxmath}
 \usepackage{libertine} \usepackage[libertine]{newtxmath}
 
+
+\usepackage[many]{tcolorbox}
+\newtcbox{\mybox}[1][]{%
+  enhanced,nobeforeafter,tcbox raise base, 
+  boxrule=0.4pt, top=0pt, bottom=-1pt,
+  right=1mm, left=1mm, arc=2pt, boxsep=1pt,
+  fontupper={\footnotesize \sffamily},
+  before upper={\vphantom{dlg}},
+  colframe=blue!45!white,
+  colback=blue!10!white,
+  coltext=blue!45!black,
+}
+
 \usepackage[natbib=true,
             style=numeric,
             sorting=ydnt,
@@ -26,7 +39,7 @@
 
 \addbibresource{rougier.bib}
 
-
+\usepackage{marginnote}
 \usepackage{tocloft}
 \usepackage{etoc}       
 \setcounter{secnumdepth}{4}
@@ -57,16 +70,13 @@
 % ------------------------------------------------------------------------------------
 % Sidenotes
 % ------------------------------------------------------------------------------------
-\DeclareDatamodelFields[type=field, datatype=literal, skipout=false]{sidenote}
-\DeclareFieldFormat{sidenote}{\marginpar{\footnotesize \textsc{\textcolor{lightgray}{#1}}}}
-
 \DeclareBibliographyCategory{Highlight}
 
 \usepackage{tikz} % Tikz basic
 \usetikzlibrary{tikzmark} % Gives \tikzmark for markers
 \usetikzlibrary{calc} % Node position calculations
 \definecolor{HighlightForeground}{HTML}{000000}
-\definecolor{HighlightBackground}{HTML}{F5F5F5}
+\definecolor{HighlightBackground}{HTML}{F0F0FF}
 \def\bibitemstyle{\color{HighlightForeground}}
 
 % New \highlight command for bibitem highlighting
@@ -84,13 +94,12 @@
                                    -- cycle;
 \end{tikzpicture}}
 
-
 \AtEveryBibitem{
   \ifcategory{Highlight}%
-    {\highlight{\thefield{entrykey}}\tikzmark{\thefield{entrykey}beg}\bibitemstyle}{}
-  \printfield{sidenote}%
+             {\highlight{\thefield{entrykey}}\tikzmark{\thefield{entrykey}beg}\bibitemstyle}{}
 }
-\renewbibmacro*{finentry}{\finentry\tikzmark{\thefield{entrykey}end}}
+\renewbibmacro{finentry}{\printfield{tags}\finentry}
+
 
 % ------------------------------------------------------------------------------------
 % No square brackets
@@ -135,7 +144,11 @@
 
 \section*{Nicolas P. Rougier's bibliography}
 \vspace{-3mm}
-Latest update on \today.
+Latest update on \today.\\
+\mybox{CN}~Computational Neurosciences~/~Neurosciences --
+\mybox{OS}~Open Science~/~Reproducible Science
+\mybox{SC}~Scientific Computing~/~Scientific visualization --
+\mybox{CG}~Computer Graphics
 
 \addtocategory{Highlight}{
   Science:2018,
@@ -143,6 +156,8 @@ Latest update on \today.
   rougier:2018a,
   rougier:2018b,
   rougier:2018c,
+  bourdenx:article:2018,
+  nioche:article:2018,
   benureau:2018,
   strock:2018,
   rougier:invited:2018a,
