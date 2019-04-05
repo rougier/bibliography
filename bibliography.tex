@@ -21,9 +21,9 @@
   right=1mm, left=1mm, arc=2pt, boxsep=1pt,
   fontupper={\footnotesize \sffamily},
   before upper={\vphantom{dlg}},
-  colframe=blue!45!white,
-  colback=blue!10!white,
-  coltext=blue!45!black,
+  colframe=blue!20!white,
+  colback=blue!5!white,
+  coltext=blue!50!white,
 }
 
 \usepackage[natbib=true,
@@ -63,12 +63,9 @@
 \hypersetup{colorlinks=true}
 
 
-% \usepackage[rmargin=4.5cm,lmargin=2cm,bmargin=2.5cm,
-%             marginparwidth=3cm,twoside=false]{geometry}
-
 
 % ------------------------------------------------------------------------------------
-% Sidenotes
+% Highligts and (side) tags
 % ------------------------------------------------------------------------------------
 \DeclareBibliographyCategory{Highlight}
 
@@ -98,7 +95,10 @@
   \ifcategory{Highlight}%
              {\highlight{\thefield{entrykey}}\tikzmark{\thefield{entrykey}beg}\bibitemstyle}{}
 }
-\renewbibmacro{finentry}{\printfield{tags}\finentry}
+% Put tags field art the end of the entry
+% \renewbibmacro{finentry}{\printfield{tags}\finentry}
+\AtEveryBibitem{\printfield{tags}}
+\renewbibmacro*{finentry}{\finentry\tikzmark{\thefield{entrykey}end}}
 
 
 % ------------------------------------------------------------------------------------
@@ -135,6 +135,20 @@
   {title}{\myhref{\mkbibquote{#1\isdot}}}
 
 
+% Got the hash for "Nicolas P. Rougier" from the .bbl file
+\edef\authorhash{\detokenize{7696c92c1d400edb1813eefb0db6f527}}
+
+\renewcommand{\mkbibnamegiven}[1]{%
+  \iffieldequals{hash}{\authorhash}{\mkbibbold{#1}}{#1}}
+\renewcommand{\mkbibnamefamily}[1]{%
+  \iffieldequals{hash}{\authorhash}{\mkbibbold{#1}}{#1}}
+\renewcommand{\mkbibnameprefix}[1]{%
+  \iffieldequals{hash}{\authorhash}{\mkbibbold{#1}}{#1}}
+\renewcommand{\mkbibnamesuffix}[1]{%
+  \iffieldequals{hash}{\authorhash}{\mkbibbold{#1}}{#1}}
+
+  
+  
 % ------------------------------------------------------------------------------------  
 
 % ------------------------------------------------------------------------------------
@@ -144,26 +158,34 @@
 
 \section*{Nicolas P. Rougier's bibliography}
 \vspace{-3mm}
+ORCID: \href{https://orcid.org/0000-0002-6972-589X}{0000-0002-6972-589X}.
 Latest update on \today.\\
+
+\noindent
 \mybox{CN}~Computational Neurosciences~/~Neurosciences --
+\mybox{CS}~Cognitive Science~/~Philosophy --
 \mybox{OS}~Open Science~/~Reproducible Science
 \mybox{SC}~Scientific Computing~/~Scientific visualization --
 \mybox{CG}~Computer Graphics
 
-\addtocategory{Highlight}{
-  Science:2018,
-  rougier:book:2018,
-  rougier:2018a,
-  rougier:2018b,
-  rougier:2018c,
-  bourdenx:article:2018,
-  nioche:article:2018,
-  benureau:2018,
-  strock:2018,
-  rougier:invited:2018a,
-  rougier:invited:2018b,
-  alexandre:chapter:2018,
-}
+%% \addtocategory{Highlight}{
+%%   Science:2018,
+%%   rougier:book:2018,
+%%   boraud:2018,
+%%   rougier:2018a,
+%%   rougier:2018b,
+%%   rougier:2018c,
+%%   khacef:2018,
+%%   upegui:2018,
+%%   % bourdenx:article:2018,
+%%   % nioche:article:2018,
+%%   benureau:2018,
+%%   strock:2018,
+%%   strock:2018b,
+%%   rougier:invited:2018a,
+%%   rougier:invited:2018b,
+%%   alexandre:chapter:2018,
+%% }
 
 \defbibheading{subbibliography}[\refname]{\subsubsection*{#1}}
 
@@ -236,7 +258,7 @@ Latest update on \today.\\
 
 \subsubsection*{Conferences/Short Papers/Posters}
 \addcontentsline{toc}{subsubsection}{Conferences/Short Papers/Posters}
-\begin{refcontext}[labelprefix=CI.]
+\begin{refcontext}[labelprefix=IC.]
 \printbibliography[heading=none, filter=conference]
 \end{refcontext}
 
@@ -248,24 +270,24 @@ Latest update on \today.\\
 \end{refcontext}
 
 
-\subsubsection*{Invited Talks}
-\addcontentsline{toc}{subsubsection}{Invited Talks}
-\begin{refcontext}[labelprefix=IV.]
-\printbibliography[heading=none, filter=invited]
-\end{refcontext}
+%% \subsubsection*{Invited Talks}
+%% \addcontentsline{toc}{subsubsection}{Invited Talks}
+%% \begin{refcontext}[labelprefix=IV.]
+%% \printbibliography[heading=none, filter=invited]
+%% \end{refcontext}
 
-\subsubsection*{Invited Lectures}
-\addcontentsline{toc}{subsubsection}{Invited Lectures}
-\begin{refcontext}[labelprefix=IL.]
-\printbibliography[heading=none, filter=lecture]
-\end{refcontext}
+%% \subsubsection*{Invited Lectures}
+%% \addcontentsline{toc}{subsubsection}{Invited Lectures}
+%% \begin{refcontext}[labelprefix=IL.]
+%% \printbibliography[heading=none, filter=lecture]
+%% \end{refcontext}
 
 
-\subsubsection*{Online Tutorials}
-\addcontentsline{toc}{subsubsection}{Online Tutorials}
-\begin{refcontext}[labelprefix=TU.]
-\printbibliography[heading=none, filter=tutorial]
-\end{refcontext}
+%% \subsubsection*{Online Tutorials}
+%% \addcontentsline{toc}{subsubsection}{Online Tutorials}
+%% \begin{refcontext}[labelprefix=TU.]
+%% \printbibliography[heading=none, filter=tutorial]
+%% \end{refcontext}
 
 
 \end{document}

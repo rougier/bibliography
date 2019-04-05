@@ -29,18 +29,26 @@
 
 
 % --- Book --------------------------------------------------------------------
+@Book{psyphine:2019,
+  editor =       {Virginie André and Yann Boniface and Amine Boumaza and
+                  Alain Dutech and Valeria Giardino and Manuel Rebuschi and
+                  Marion Renauld and Nicolas P. Rougier and Frédéric Verhaegen},
+  title =        {{Cogitamus Ergo Sumus}},
+  publisher =    {Presses Universitaires Paris Nanterres},
+  year =         {2019},
+  keywords =     {book},
+  tags =         {CN},
+}
+
 @book{rougier:book:2018,
   title =        {Python \& OpenGL for Scientific Visualization},
   author =       {Nicolas P. Rougier},
   publisher =    {Zenodo},
   year =         2018,
-  doi =          {},
-  hal_id =       {},
-  url =          {},
-  github =       {},
+  url =          {http://www.labri.fr/perso/nrougier/python-opengl/},
+  github =       {https://github.com/rougier/python-opengl},
   keywords =     {book},
-  tags =         {OS},
-  addendum =     {To appear.},
+  tags =         {SC},
 }
 
 @book{rougier:book:2016,
@@ -53,7 +61,7 @@
   url =          {http://www.labri.fr/perso/nrougier/from-python-to-numpy/},
   github =       {https://github.com/rougier/from-python-to-numpy},
   keywords =     {book},
-  tags =         {OS},
+  tags =         {SC},
 %  note =         {\href{https://news.ycombinator.com/item?id=13355034}{$\star$~Hacker~News~highlight~$\star$}},
 }
 
@@ -71,12 +79,105 @@
   hal_id =       {hal-01206546},
   github =       {https://github.com/scipy-lectures/scipy-lecture-notes},
   keywords =     {book},
+  tags =         {SC},
+}
+
+
+% --- Preprints ---------------------------------------------------------------
+@article{strock:preprint:2019,
+  author =       {Anthony Strock and Xavier Hinaut and Nicolas P. Rougier},
+  title =        {A Robust Model of Gated Working Memory},
+  journal =      {BioRxiv},
+  publisher =    {Cold Spring Harbor Laboratory},
+  year =         {2019},
+  month =        {3},
+  url =          {https://www.biorxiv.org/content/10.1101/589564v1},
+  keywords =     {preprint},
+  tags =         {CN},
+}
+
+@article{shivkumar:article:2017,
+  doi =          {10.1101/196543},
+  year =         2017,
+  month =        9,
+  journal =      {BioRxiv},
+  publisher =    {Cold Spring Harbor Laboratory},
+  author =       {Sabyasachi Shivkumar and V. Srinivasa Chakravarthy and
+                  Nicolas P. Rougier},
+  title =        {Modeling the Role of Striatum in Stochastic Multi Context
+                  Tasks},
+  url =          {https://www.biorxiv.org/content/early/2017/09/30/196543},
+  pdf =
+                  {https://www.biorxiv.org/content/biorxiv/early/2017/09/30/196543.full.pdf},
+  keywords =     {preprint},
+  tags =         {CN},
+}
+
+@Article{rougier:article:2017c,
+  author =       {Nicolas P. Rougier and John Timmer},
+  title =        {Ten Simple Rules for Scientific Fraud \& Misconduct},
+  journal =      {HAL},
+  year =         2017,
+  pdf =          {https://hal.inria.fr/hal-01562601/document},
+  url =          {https://hal.inria.fr/hal-01562601/document},
+  hal_id =       {hal-01562601},
+  keywords =     {preprint},
   tags =         {OS},
 }
 
 
-
 % --- Articles ----------------------------------------------------------------
+@article{hinsen:2019,
+  journal =      {{ReScience}},
+  title =        {{ReScience (R)evolution}},
+  author =       {Konrad Hinsen and Nicolas P. Rougier},
+  year =         2019,
+  keywords =     {journal},
+  tags =         {OS},
+}
+
+@Article{nioche:2019,
+  author =       {Aurélien Nioche and Basile Garcia and Thomas Boraud and Sacha
+                  Bourgeois-Gironde and Nicolas P. Rougier},
+  title =        {{Induction of a Non-Competitive Behavior in a Duopoly}},
+  journal =      {Palgrave Communication},
+  year =         2019,
+  volume =       {5},
+  issue =        {6},
+  note =         {},
+  keywords =     {journal},
+  tags =         {CN},
+  doi =          {},
+  url =          {https://www.nature.com/articles/s41599-019-0241-x}
+}
+
+@article{boraud:2018,
+  year =         2018,
+  publisher =    {Elsevier},
+  author =       {Thomas Boraud and Arthur Leblois and Nicolas P. Rougier},
+  title =        {A Natural History of Skills},
+  journal =      {Progress in Neurobiology},
+  month =        {8},
+  keywords =     {journal},
+  tags =         {OS},
+  doi =          {10.1016/j.pneurobio.2018.08.003},
+}
+
+@Article{topalidou:2018,
+  author =       {Meropi Topalidou and Daisuke Kase and Thomas Boraud and
+                  Nicolas P. Rougier},
+  title =        {{A Computational Model of Dual Competition between the Basal
+                   Ganglia and the Cortex}},
+  journal =      {eNeuro},
+  year =         2018,
+  volume =       {5},
+  issue =        {6},
+  month =        12,
+  keywords =     {journal},
+  tags =         {CN},
+  doi =          {10.1523/ENEURO.0339-17.2018}
+}
+
 @article{rougier:2018b,
   doi =          {10.1038/d41586-018-04628-w},
   year =         2018,
@@ -116,55 +217,13 @@
   author =       {Fabien C. Y. Benureau and Nicolas P. Rougier},
   title =        {{Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming
                   Code into Scientific Contributions}},
-  github =       {https://github.com/rougier/ReRun-Repeat-Reproduce-Reuse-Replicate},
+  github =
+                  {https://github.com/rougier/ReRun-Repeat-Reproduce-Reuse-Replicate},
   journal =      {Frontiers in Neuroinformatics},
   keywords =     {journal},
   tags =         {OS},
 }
 
-@article{shivkumar:article:2017,
-  doi =          {10.1101/196543},
-  year =         2017,
-  month =        9,
-  journal =      {BioRxiv},
-  publisher =    {Cold Spring Harbor Laboratory},
-  author =       {Sabyasachi Shivkumar and V. Srinivasa Chakravarthy and
-                  Nicolas P. Rougier},
-  title =        {Modeling the Role of Striatum in Stochastic Multi Context
-                  Tasks},
-  url =          {https://www.biorxiv.org/content/early/2017/09/30/196543},
-  pdf =          {https://www.biorxiv.org/content/biorxiv/early/2017/09/30/196543.full.pdf},
-  keywords =     {preprint},
-  tags =         {CN},
-}
-
-@Article{topalidou:article:2017b,
-  author =       {Meropi Topalidou and Daisuke Kase and Thomas Boraud and
-                  Nicolas P. Rougier},
-  title =        {{Dual Competition between the Basal Ganglia and the Cortex:
-                  from Action-Outcome to Stimulus-Response}},
-  journal =      {BioRxiv},
-  year =         2017,
-  doi =          {10.1101/187294},
-  url =
-                  {https://www.biorxiv.org/content/biorxiv/early/2017/09/13/187294.full.pdf},
-  pdf =
-                  {https://www.biorxiv.org/content/early/2017/09/13/187294.full.pdf},
-  keywords =     {preprint},
-  tags =         {CN},
-}
-
-@Article{rougier:article:2017c,
-  author =       {Nicolas P. Rougier and John Timmer},
-  title =        {Ten Simple Rules for Scientific Fraud \& Misconduct},
-  journal =      {HAL},
-  year =         2017,
-  pdf =          {https://hal.inria.fr/hal-01562601/document},
-  url =          {https://hal.inria.fr/hal-01562601/document},
-  hal_id =       {hal-01562601},
-  keywords =     {preprint},
-  tags =         {OS},
-}
 
 @Article{rougier:article:2017b,
   doi =          {10.7717/peerj-cs.142},
@@ -233,8 +292,10 @@
   number =       2,
   year =         2017,
   hal_id =       {hal-01513273},
-  url =          {https://openlab-flowers.inria.fr/uploads/default/original/1X/65addc14bb2a6a7feaf7690865fa3708d5b0990f.pdf},
-  pdf =          {https://openlab-flowers.inria.fr/uploads/default/original/1X/65addc14bb2a6a7feaf7690865fa3708d5b0990f.pdf},
+  url =
+                  {https://openlab-flowers.inria.fr/uploads/default/original/1X/65addc14bb2a6a7feaf7690865fa3708d5b0990f.pdf},
+  pdf =
+                  {https://openlab-flowers.inria.fr/uploads/default/original/1X/65addc14bb2a6a7feaf7690865fa3708d5b0990f.pdf},
   github =       {https://github.com/rougier/diversity-in-reproducibility},
   keywords =     {correspondence},
   tags =         {OS},
@@ -248,9 +309,12 @@
   number =       1,
   year =         2016,
   hal_id =       {hal-01358082},
-  url =          {https://openlab-flowers.inria.fr/uploads/default/original/1X/8772fe3ca3c74b838e0e8161c3fb24dafdf1c368.pdf},
-  pdf =          {https://openlab-flowers.inria.fr/uploads/default/original/1X/8772fe3ca3c74b838e0e8161c3fb24dafdf1c368.pdf},
-  github =       {https://github.com/rougier/what-is-computational-reproducibility},
+  url =
+                  {https://openlab-flowers.inria.fr/uploads/default/original/1X/8772fe3ca3c74b838e0e8161c3fb24dafdf1c368.pdf},
+  pdf =
+                  {https://openlab-flowers.inria.fr/uploads/default/original/1X/8772fe3ca3c74b838e0e8161c3fb24dafdf1c368.pdf},
+  github =
+                  {https://github.com/rougier/what-is-computational-reproducibility},
   keywords =     {correspondence},
   tags =         {OS},
 }
@@ -295,7 +359,8 @@
   pdf =          {https://hal.inria.fr/hal-01201790/document},
   doi =          {10.5281/zenodo.27944},
   hal_id =       {hal-01201790},
-  github =       {https://github.com/ReScience-Archives/ReScience-Entry-Topalidou-Rougier-2015},
+  github =
+                  {https://github.com/ReScience-Archives/ReScience-Entry-Topalidou-Rougier-2015},
   keywords =     {replication},
   tags =         {CN},
 }
@@ -604,7 +669,7 @@
 
 % --- Chapters ----------------------------------------------------------------
 
-@InCollection{alexandre:chapter:2018,
+@InCollection{alexandre:chapter:2019,
   author =       {Frédéric Alexandre and Peter F. Dominey and Philippe Gaussier
                   and Benoît Girard and Mehdi Khamassi and Nicolas P. Rougier},
   title =        {When Artificial Intelligence and Computational Neuroscience
@@ -612,8 +677,7 @@
   booktitle =    {A guided tour of artificial intelligence research, Vol. 3
                   Interfaces and applications of artificial intelligence},
   publisher =    {Springer-Verlag},
-  year =         2018,
-  note =         {To appear},
+  year =         2019,
   tags =         {CN},
 }
 
@@ -719,7 +783,7 @@
   year =         2017,
   publisher =    {Springer International Publishing},
   pages =        {235--241},
-  author =       {Ikram Chraibi Kaadoud and Nicolas Rougier and Frederic
+  author =       {Ikram Chraibi Kaadoud and Nicolas P. Rougier and Frederic
                   Alexandre},
   title =        {Implicit Knowledge Extraction and Structuration from
                   Electrical Diagrams},
@@ -729,27 +793,97 @@
 }
 
 % --- Conference --------------------------------------------------------------
+@InProceedings{rougier:2019a,
+  author =       {Nicolas P. Rougier},
+  title =        {The Eye of the Modeler},
+  booktitle =    {International Society for the History Philosophy and Social
+                  Studies of Biology biennial meeting},
+  year =         {2019},
+  address =      {Oslo (Norway)},
+  keywords =     {conf},
+  tag =          {CS}
+}
+
+@InProceedings{rougier:2018d,
+  title =        {ReScience~C: a journal for reproducible replications in
+                  computational science},
+  author =       {Nicolas P. Rougier and Konrad Hinsen},
+  booktitle =    {International Conference on Pattern Recognition},
+  publisher =    {Springer},
+  editor =       {IEEE},
+  year =         2018,
+  month =        12,
+  tags =         {OS},
+  keywords =     {conf}
+}
+
+@InProceedings{strock:2018b,
+  author = {Strock, Anthony and Rougier, Nicolas P. and Hinaut, Xavier},
+  language = {en},
+  title = {{A Simple Reservoir Model of Working Memory with Real Values}},
+  year = {2018},
+  addendum = {Poster},
+  month = 6,
+  tags =         {CN},
+  address = {Göttingen, Germany},
+  booktitle = {Third workshop on advanced methods in theoretical neuroscience},
+  doi = {10.13140/rg.2.2.32611.45608},
+  url = {http://rgdoi.net/10.13140/RG.2.2.32611.45608},
+}
+
+@InProceedings{upegui:2018,
+  title =        {Pruning Self-Organizing Maps for Cellular Hardware Architectures},
+  author =       {Upegui, Andres and Girau, Bernard and Rougier, Nicolas P. and
+                  Vannel, Fabien and Miramond, Benoît},
+  booktitle =    {{NASA/ESA Conference on Adaptive Hardware and Systems}},
+  address =      {Edinburgh, UK},
+  editor =       {IEEE},
+  year =         2018,
+  month =        8,
+  tags =         {CN},
+}
+
+@InProceedings{khacef:2018,
+  title =        {Neuromorphic hardware as a self-organizing computing system},
+  author =       {Khacef, Lyes and Girau, Bernard and Rougier, Nicolas P. and
+                  Upegui, Andres and Miramond, Benoît},
+  booktitle =    {{Neuromorphic Hardware In Practice and Use (NHPU) workshop
+                  2018 in IEEE World Congress on Computational Intelligence
+                  (WCCI): International Joint Conference on Neural Networks
+                  (IJCNN)}},
+  address =      {Rio de Janeiro, Brazil},
+  editor =       {IEEE},
+  year =         2018,
+  month =        7,
+  tags =         {CN},
+  pdf =          {https://hal.archives-ouvertes.fr/hal-01790776/document},
+  hal_id =       {hal-01790776},
+}
+
 @InProceedings{rougier:2018c,
   author =       {Rougier, Nicolas P. and Esfahbod, Behdad},
-  title =        {{Digital Typography \& Rendering}},
+  title =        {{Digital Typography Rendering}},
   booktitle =    {ACM SIGGRAPH},
   address =      {Vancouver, Canada},
   year =         2018,
   month =        8,
   tags =         {CG},
+  pdf =          {https://hal.inria.fr/hal-01815193/document},
+  hal_id =       {hal-01815193}
 }
 
-
 @InProceedings{strock:2018,
-  title =        {{A Simple Reservoir Model of Working Memory with Real Values}},
+  title =        {{A Simple Reservoir Model of Working Memory with Real
+                  Values}},
   author =       {Strock, Anthony and Rougier, Nicolas P. and Hinaut, Xavier},
-  booktitle =    {{International Joint Conference on Neural Networks}},
-  address =      {Rio, Brazil},
+  booktitle =    {{International Joint Conference on Neural Networks (IJCNN)}},
+  address =      {Rio de Janeiro, Brazil},
+  editor =       {IEEE},
   year =         2018,
   month =        7,
-  pdf =          {},
-  hal_id =       {},
   tags =         {CN},
+  pdf =          {https://hal.inria.fr/hal-01803594/document},
+  hal_id =       {hal-01803594},
 }
 
 @InProceedings{rougier:2017b,
@@ -763,6 +897,7 @@
   pdf =          {https://hal.inria.fr/hal-01535484/document},
   hal_id =       {hal-01535484},
   tags =         {CN},
+  addendum =     {Poster},
 }
 
 @InProceedings{rougier:2017a,
@@ -773,7 +908,8 @@
   address =      {Nancy, France},
   year =         2017,
   month =        6,
-  pdf =          {https://hal.inria.fr/hal-01513519/file/RougierBoniface-WSOM-2017.pdf},
+  pdf =
+                  {https://hal.inria.fr/hal-01513519/file/RougierBoniface-WSOM-2017.pdf},
   hal_id =       {hal-01513519},
   tags =         {CN},
 }
@@ -799,6 +935,7 @@
   hal_id =       {hal-01354041},
   year =         2016,
   tags =         {CN},
+  addendum =     {Poster}
 }
 
 @InProceedings{nallapu:2016a,
@@ -826,6 +963,7 @@
   year =         2015,
   github =       {https://github.com/glumpy/glumpy},
   tags =         {SC},
+  addendum =     {Poster}
 }
 
 @InProceedings{nallapu:2015,
@@ -865,6 +1003,7 @@
   booktitle =    {SBDM, Paris},
   year =         2015,
   tags =         {CN},
+  addendum =     {Poster}
 }
 
 @InProceedings{topalidou:2015e,
@@ -874,6 +1013,7 @@
   booktitle =    {CNS, Prague},
   year =         2015,
   tags =         {CN},
+  addendum =     {Poster}
 }
 
 @InProceedings{rougier:2014d,
@@ -966,7 +1106,7 @@
 }
 
 @InProceedings{Fix:2007b,
-  author =       {Fix, J. and Rougier, N. and Alexandre, F.},
+  author =       {Fix, Julien and Rougier, Nicolas P. and Alexandre, Frédéric},
   title =        {A top-down attentional system scanning multiple targets with
                   saccades},
   booktitle =    {From Computational Cognitive Neuroscience to Computer Vision},
@@ -975,7 +1115,7 @@
 }
 
 @InProceedings{fix:2006,
-  author =       {Fix, J. and Vitay, J. and Rougier, N.},
+  author =       {Fix, Jérémy and Vitay, Julien and Rougier, Nicolas P.},
   title =        {A Computational Model of Spatial Memory Anticipation during
                   Visual Search },
   booktitle =    {Anticipatory Behavior in Adaptive Learning Systems },
@@ -1060,6 +1200,7 @@
 
 
 % --- Tutorial ----------------------------------------------------------------
+
 @misc{rougier:tutorial:matplotlib,
   author =       {Nicolas P. Rougier},
   title =        {Matplotlib Tutorial},
@@ -1068,7 +1209,9 @@
   doi =          {10.5281/zenodo.28747},
   keywords =     {tutorial},
   github =       {https://github.com/rougier/matplotlib-tutorial},
-  addendum =     {~\\See \href{https://github.com/rougier/matplotlib-tutorial}{https://github.com/rougier/matplotlib-tutorial}}
+  addendum =     {~\\See
+                  \href{https://github.com/rougier/matplotlib-tutorial}{https://github.com/rougier/matplotlib-tutorial}},
+  tags =         {SC},                  
 }
 
 @misc{rougier:tutorial:numpy,
@@ -1079,7 +1222,9 @@
   doi =          {10.5281/zenodo.28817},
   keywords =     {tutorial},
   github =       {https://github.com/rougier/numpy-tutorial},
-  addendum =     {~\\ See \href{https://github.com/rougier/numpy-tutorial}{https://github.com/rougier/numpy-tutorial}}
+  addendum =     {~\\ See
+                  \href{https://github.com/rougier/numpy-tutorial}{https://github.com/rougier/numpy-tutorial}},
+  tags =         {SC},
 }
 
 @misc{rougier:tutorial:numpy-100,
@@ -1089,23 +1234,27 @@
   keywords =     {tutorial},
   github =       {https://github.com/rougier/numpy-100},
   url =          {https://github.com/rougier/numpy-100},
-  addendum =     {~\\ See \href{https://github.com/rougier/numpy-100}{https://github.com/rougier/numpy-100}}
-
+  addendum =     {~\\ See
+                  \href{https://github.com/rougier/numpy-100}{https://github.com/rougier/numpy-100}},
+  tags =         {SC},
 }
 
-%@misc{rougier:tutorial:c++,
-%  author =       {Nicolas P. Rougier},
-%  title =        {C++ Crash course},
-%  year =         2011,
-%  keywords =     {tutorial},
-%  url =          {http://www.labri.fr/perso/nrougier/teaching/c++-crash-course/}
-%}
+@misc{rougier:tutorial:c++,
+ author =       {Nicolas P. Rougier},
+ title =        {C++ Crash course},
+ year =         2011,
+ keywords =     {tutorial},
+ url =          {http://www.labri.fr/perso/nrougier/teaching/c++-crash-course/},
+ tags =         {SC},
+}
 
 
 
 % --- Popular -----------------------------------------------------------------
 
-%  @Misc{rougier:popular:2017a,
+%
+
+% @Misc{rougier:popular:2017a,
 %    author =       {Nicolas P. Rougier},
 %    title =        {Une brève histoire de l'intelligence artificielle},
 %    note =         {Geek Festival, Bordeaux, France},
@@ -1115,7 +1264,9 @@
 %    url =          {http://geek-festival.fr}
 %  }
 
-%@Article{rougier:popular:2016c,
+%
+
+% @Article{rougier:popular:2016c,
 %  author =       {Nicolas P. Rougier},
 %  title =        {Visual Attention, Neural Networks and Computational
 %                  Neuroscience},
@@ -1142,7 +1293,8 @@
   journal =      {The Conversation (US)},
   year =         2016,
   keywords =     {popular},
-  url =          {https://theconversation.com/silicon-soul-the-vain-dream-of-electronic-immortality-52368}
+  url =
+                  {https://theconversation.com/silicon-soul-the-vain-dream-of-electronic-immortality-52368}
 }
 
 @Misc{rougier:popular:2015e,
@@ -1194,7 +1346,8 @@
   year =         2015,
   keywords =     {popular},
   lang =         {French},
-  url =          {http://rafaelebrillaud.net/site/wp-content/uploads/Thinkovery-2015.05-copie.pdf}
+  url =
+                  {http://rafaelebrillaud.net/site/wp-content/uploads/Thinkovery-2015.05-copie.pdf}
 }
 
 @Article{rougier:popular:2014a,
@@ -1242,7 +1395,9 @@
   url =          {http://videos.univ-lorraine.fr/index.php?act=view&id=504}
 }
 
-%@Article{rougier:popular:2011b,
+%
+
+% @Article{rougier:popular:2011b,
 %  author =       {Nicolas P. Rougier},
 %  title =        {Le modèle du cerveau, la pensée et le robot},
 %  journal =      {INRIA website},
@@ -1276,7 +1431,8 @@
   year =         2003,
   keywords =     {correspondence},
   hal_id =       {inria-00099617},
-  url =          {http://www.ercim.eu/publication/Ercim_News/enw53/rougier.html},
+  url =
+                  {http://www.ercim.eu/publication/Ercim_News/enw53/rougier.html},
   tags =         {CN},
 }
 
@@ -1314,6 +1470,7 @@
 
 
 % --- Talks -------------------------------------------------------------------
+
 @Misc{rougier:invited:2018b,
   title =        {{Reproducibility in Machine Learning}},
   note =         {{ICML Workshop on Reproducibility, Stockholm, Sweden}},
@@ -1371,7 +1528,6 @@
   keywords =     {invited},
 }
 
-
 @Misc{rougier:invited:2016e,
 %  author =       {Nicolas P. Rougier},
   title =        {Two actors, one critic},
@@ -1405,7 +1561,6 @@
   lang =         {French},
 }
 
-
 @Misc{rougier:invited:2015c,
 %  author =       {Nicolas P. Rougier},
   title =        {From neuron to behavior},
@@ -1414,7 +1569,6 @@
   year =         2015,
   keywords =     {invited},
 }
-
 
 @Misc{rougier:invited:2015b,
 %  author =       {Nicolas P. Rougier},
@@ -1436,7 +1590,6 @@
   keywords =     {invited}
 }
 
-
 @Misc{rougier:invited:2014d,
 %  author =       {Rougier, Nicolas P.},
   title =        {Cortical plasticity: a neural field approach},
@@ -1445,7 +1598,6 @@
   year =         2014,
   keywords =     {invited},
 }
-
 
 @Misc{rougier:invited:2014b,
 %  author =       {Nicolas P. Rougier},
@@ -1476,7 +1628,6 @@
    keywords =     {invited},
  }
 
-
 @Misc{rougier:invited:2013c,
 %  author =       {Rougier, Nicolas P.},
   title =        {We see only what we look at},
@@ -1485,7 +1636,6 @@
   lang =         {French},
   keywords =     {invited},
 }
-
 
 @Misc{rougier:invited:2013a,
 %  author =       {Rougier, Nicolas P.},
@@ -1578,6 +1728,7 @@
 
 
 % --- Lectures ----------------------------------------------------------------
+
 @Misc{rougier:lecture:2017,
 %  author =       {Nicolas P. Rougier},
   title =        { Less is more },
@@ -1678,6 +1829,7 @@
   year =         { 2010 },
   keywords =     { lecture },
 }
+
 @Misc{rougier:lecture:2010b,
 %  author =       {Rougier, Nicolas P.},
   title =        { {Visual Attention} },
@@ -1685,6 +1837,7 @@
   year =         { 2010 },
   keywords =     { lecture },
 }
+
 @Misc{rougier:lecture:2010c,
 %  author =       {Rougier, Nicolas P.},
   title =        { {Introduction to Neural Fields} },
@@ -1692,6 +1845,7 @@
   year =         { 2010 },
   keywords =     { lecture },
 }
+
 @Misc{rougier:lecture:2010d,
 %  author =       {Rougier, Nicolas P.},
   title =        { {Models of Visual Attention} },
@@ -1702,6 +1856,7 @@
 
 
 % --- External ----------------------------------------------------------------
+
 @article{Science:2018,
   author = {Matthew Hutson},
   % doi = {10.1126/science.359.6377.725},
@@ -1719,32 +1874,29 @@
 }
 
 @article{Nature2014,
-  doi = {10.1038/513463e},
-  year  = {2014},
-  month = {9},
-  publisher = {Springer Nature},
-  volume = {513},
-  number = {7519},
-  pages = {463--463},
-  title = {How to draw perfect figures},
-  journal = {Nature},
-  keywords =  {external},
-  addendum = {~\\Social selection about
-              \href{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833}{Ten Simple Rules for Better Figures},
-              see also \cite{rougier:article:2014b}}}
-}
+  doi =          {10.1038/513463e},
+  year =         2014,
+  month =        9,
+  publisher =    {Springer Nature},
+  volume =       513,
+  number =       7519,
+  pages =        {463--463},
+  title =        {How to draw perfect figures},
+  journal =      {Nature},
+  keywords =     {external},
+  addendum =     {~\\Social selection about
+                  \href{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833}{Ten Simple Rules for Better Figures}, see also \cite{rougier:article:2014b}}}
 
 @article{Woolston2014,
-  doi = {10.1038/nature.2014.15999},
-  year  = {2014},
-  month = {9},
-  publisher = {Springer Nature},
-  author = {Chris Woolston},
-  title = {How to dodge the pitfalls of bad illustrations},
-  journal = {Nature},
-  keywords =  {external},
-  addendum = {~\\Highlight on 
-              \href{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833}{Ten Simple Rules for Better Figures},
-              see also \cite{rougier:article:2014b}}}
-
+  doi =          {10.1038/nature.2014.15999},
+  year =         2014,
+  month =        9,
+  publisher =    {Springer Nature},
+  author =       {Chris Woolston},
+  title =        {How to dodge the pitfalls of bad illustrations},
+  journal =      {Nature},
+  keywords =     {external},
+  addendum =     {~\\Highlight on
+                  \href{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833}{Ten Simple Rules for Better Figures}, see also \cite{rougier:article:2014b}}
 }
+
